@@ -18,6 +18,10 @@ RESTFUl 一种软件架构风格、设计风格，而不是标准，只是提供
 7. 自定义 spring data rest 查询、删除等方法
 8. 接口测试工具以及测试spring mvc
 
+> **所有代码均已上传到 [github](https://github.com/lizhongyue248/spring-boot-restful-api)**
+
+> **博客地址：[spring boot restful API 从零到一完整实践](https://echocow.cn/articles/2019/01/05/1546684795983.html)**
+
 # 需要做好的规划
 
 ## Api 基本设计
