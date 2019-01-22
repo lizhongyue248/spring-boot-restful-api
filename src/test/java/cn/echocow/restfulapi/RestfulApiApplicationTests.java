@@ -11,6 +11,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
+import javax.sql.DataSource;
+
+import static org.junit.Assert.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -21,6 +24,9 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 public class RestfulApiApplicationTests {
 
     private MockMvc mockMvc;
+
+    @Autowired
+    private DataSource dataSource;
 
     @Autowired
     private WebApplicationContext webApplicationContext;
@@ -36,6 +42,12 @@ public class RestfulApiApplicationTests {
                 .andExpect(status().isOk())
                 .andReturn();
     }
+
+    @Test
+    public void testBean(){
+        assertNotNull(dataSource);
+    }
+
 
 }
 

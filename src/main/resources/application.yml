@@ -6,6 +6,11 @@ spring:
     username: root
     password: 123456
     platform: mysql
+#    schema:
+#      - classpath:sql/schema.sql
+#    data:
+#      - classpath:sql/books.sql
+    initialization-mode: always
   jpa:
     show-sql: true
     hibernate:
@@ -19,4 +24,30 @@ spring:
 server:
   servlet:
     context-path: /api
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+security:
+  oauth2:
+    client:
+#      客户端 id
+      client-id: resful
+#      客户端密钥
+      client-secret: restfulSecret
+#      范围
+      scope: all
+#      有效时间
+      access-token-validity-seconds: 6000
+#      刷新时间
+      refresh-token-validity-seconds: 6000
+#      token 名字
+      token-name: oauth_token
+#      授权类型 密码模式
+      grant-type: password
+#      回调地址
+#      registered-redirect-uri: http://example.com
 
